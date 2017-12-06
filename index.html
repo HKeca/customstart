@@ -15,14 +15,10 @@
             <input onKeyPress="run(event)" type="text" id="searchQuery" placeholder="Search . . . ">
         </div>
 
-        <div class="previousSearches"> 
-            <ul class="previousSearchList">
-                <li><a href="#" class="query-link">Some query</a></li>
-                <li><a href="#" class="query-link">Some query</a></li>
-                <li><a href="#" class="query-link">Some query</a></li>                
-            </ul>
-        </div>
-
+        <div class="previousSearches" id="history"></div>
+        
+        <script src="js/renderer.js"></script>
+        <script src="js/history.js"></script>
         <script src="js/search.js"></script>
         <script src="js/main.js"></script>
     </body>

@@ -1,9 +1,18 @@
 /**
- * Init search
+ * Init
  */
-mySearch = new Search("bing");
+mySearch	= new Search("bing", {"bing": "bing.com/search?=", "google": "google.com/search?q="});
+Renderer	= new Renderer();
+
+/**
+ * Load savedata 
+ */
+let historyContainer 	= document.getElementById('history');
+let saveData			= JSON.parse(localStorage.getItem('saveData')) || [];
+History					= new History(historyContainer, saveData, Renderer);
 
 
+// TODO: clean up main function
 function gotoSubreddit(query) {
 	mySearch.goto(`http://reddit.com/r/${query}`);
 }
@@ -15,6 +24,7 @@ function run(event) {
 		if (searchQuery.indexOf('.') > -1 
 			&& searchQuery.indexOf('. ') < 0
 			&& searchQuery.indexOf(' . ') < 0) {
+			History.updateHistory(searchQuery);			
 			mySearch.goto(searchQuery);
 		} else if(searchQuery.indexOf('r/') > -1) {
 			var query = searchQuery.split('/')[1];
@@ -24,3 +34,5 @@ function run(event) {
 		}
 	}
 }
+
+History.renderHistory();

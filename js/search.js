@@ -1,5 +1,13 @@
 class Search
 {
+    /**
+     * Search
+     * 
+     * @param {string} searchEngine specify a search engine to use
+     * @param {object} searchEngines specify a set of search engines (default only has bing)
+     * 
+     * Example searchEngines: {"bing": "www.bing.com/search?q=", "name": "url"}
+     */
     constructor(searchEngine, searchEngines = null) {
         if (!searchEngines) {
             var searchEngines = {
@@ -14,14 +22,14 @@ class Search
     /**
      * Get the current search engine used to search for queries
      */
-    get getSearchEngine() {
+    getSearchEngine() {
         return this.searchEngine;
     }
 
     /**
      * Set current search engine
      */
-    set setSearchEngine(searchEngine) {
+    setSearchEngine(searchEngine) {
         return this.searchEngine = this.searchEngines[searchEngine];
     }
 
@@ -40,6 +48,9 @@ class Search
      * @param {string} query 
      */
     goto(query) {
+        if (query.indexOf('http://') < 0)
+            query = "http://" + query;
+        
         return document.location = `${query}`;
     }
 }
