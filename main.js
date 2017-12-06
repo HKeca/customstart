@@ -22,7 +22,7 @@ function gotoSubreddit(query) {
 
 function run(event) {
 	if (event.keyCode == 13) {
-		var searchQuery = document.getElementById('search').value;
+		var searchQuery = document.getElementById('searchQuery').value;
 
 		if (searchQuery.indexOf('.') > -1 
 			&& searchQuery.indexOf('. ') < 0

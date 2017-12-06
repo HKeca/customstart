@@ -8,3 +8,50 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    background: #F3F3F1;
+}
+
+.nav {
+    margin: 30px;
+}
+
+.nav-btn {
+    color: #434B56;
+    text-decoration: none;
+    font-size: 2.0em;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#searchQuery {
+    width: 50%;
+    border: none;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.previousSearchList {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.previousSearchList li {
+    padding: 0 20px;
+    list-style: none;
+    display: inline-block;
+}
+
+.query-link {
+    text-decoration: none;
+    color: #434B56;
+    border-bottom: 1px solid #434B56;
+    padding-bottom: 1px;
+}
