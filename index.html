@@ -9,9 +9,15 @@
   
     <body>
         <div class="nav">
-            <a href="#" class="nav-btn">&#9776;</a>
-        </div>
+            <a href="#" class="nav-btn" onClick="openMenu()">&#9776;</a>
 
+            <div tabIndex="1" id="nav-menu" class="nav-menu" onBlur="closeMenu()">
+                <ul>
+                    <li class="nav-menu-item" onClick="History.clearHistory()">Clear History</li>
+                </ul>
+            </div>
+        </div>
+        
         <div class="search">
             <input onKeyPress="run(event)" type="text" id="searchQuery" placeholder="Search . . . ">
         </div>

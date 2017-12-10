@@ -40,4 +40,14 @@ function run(event) {
 	}
 }
 
+function openMenu() {
+	let menu = document.getElementById('nav-menu');
+	menu.style.display = "flex";
+	menu.focus();
+}
+
+function closeMenu() {
+	document.getElementById('nav-menu').style.display = "none";
+}
+
 History.renderHistory();

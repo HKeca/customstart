@@ -15,17 +15,40 @@ body {
 }
 
 .nav {
-    margin: 30px;
+    position: relative;
 }
 
 .nav-btn {
+    margin: 50px;
     color: #434B56;
     text-decoration: none;
     font-size: 2.0em;
 }
 
+.nav-menu {
+    display: none;    
+    position: fixed;
+    top: 0;
+    background: white;
+    width: 20%;
+    height: 100vh;
+    justify-content: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu-item {
+    padding: 15px;
+    font-size: 1.2em;
+    color: #434B56;
+    cursor: pointer;   
+}
+
 .search {
     display: flex;
+    margin-top: 140px;
     justify-content: center;
     width: 100%;
 }
