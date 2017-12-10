@@ -1,7 +1,12 @@
 /**
  * Init
  */
-mySearch	= new Search("bing", {"bing": "bing.com/search?=", "google": "google.com/search?q="});
+let searchUrls = {
+	"bing": "http://www.bing.com/search?q=",
+	"google": "http://www.google.com/search?q="
+};
+
+mySearch	= new Search("bing", searchUrls);
 Renderer	= new Renderer();
 
 /**
