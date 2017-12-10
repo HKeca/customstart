@@ -5,12 +5,14 @@ class History
      * 
      * @param {string} historyView the div where the history will be rendered 
      * @param {object} savedHistory the history object saved in the browser
-     * @param {instance} renderer an instance of the renderer class 
+     * @param {instance} renderer an instance of the renderer class
+     * @param {int} historyLimit limit to the amount of history objects saved. (default = 2)
      */
-    constructor(historyView, savedHistory, renderer) {
+    constructor(historyView, savedHistory, renderer, historyLimit = 2) {
         this.renderer = renderer;
         this.historyView = historyView;
         this.savedHistory = savedHistory;
+        this.historyLimit = historyLimit;
     }
 
     /**
@@ -24,6 +26,8 @@ class History
 
         let newEntry = {url: url, style: 'query-link', type: 'a'};
 
+        if (this.savedHistory.length > this.historyLimit)
+            this.savedHistory.pop();
         this.savedHistory.push(newEntry);
         this.saveHistory();
         return this.renderHistory();
